@@ -1,0 +1,15 @@
+# 忽略所有 ZIP 文件
+*.zip
+# 忽略说有 EXE 文件
+*.exe
+
+# 忽略所有 __pycache__ 目录
+__pycache__/
+
+# 忽略所有模型相关文件
+Yolo_Binocular_Recognition/video/
+Yolo_Binocular_Recognition/images/
+Yolo_Binocular_Recognition/logs/
+Yolo_Binocular_Recognition/model_data/
+photo/
+
