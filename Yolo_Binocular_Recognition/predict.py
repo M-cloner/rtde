@@ -93,14 +93,53 @@ if __name__ == "__main__":
                 r_image.show()
 
     elif mode == "video":
+        # # 摄像头实时识别
         # camera = cv2.VideoCapture(0)
         # camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
         # camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)  
 
-        # cv2.createTrackbar("num", "depth", 2, 10, lambda x: None)
-        # cv2.createTrackbar("blockSize", "depth", 5, 25, lambda x: None)
+        # cv2.createTrackbar("num", "depth", 6, 10, lambda x: None)
+        # cv2.createTrackbar("blockSize", "depth", 10, 25, lambda x: None)
         # fps = 0.0
+        # while(True):
+        #     t1 = time.time()
+        #     # 读取某一帧
+        #     ref, frame = camera.read()          
+            
+        #     if not ref:
+        #         break
+        #     # 格式转变，BGRtoRGB
+        #     frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
+        #     # 转变成Image
+        #     frame = Image.fromarray(np.uint8(frame))
+        #     # 进行检测
+        #     frame = np.array(yolo.detect_image(frame))
+        #     # RGBtoBGR满足opencv显示格式
+        #     frame = cv2.cvtColor(frame,cv2.COLOR_RGB2BGR)
 
+        #     fps  = ( fps + (1./(time.time()-t1)) ) / 2
+        #     print("fps= %.2f"%(fps))
+        #     frame = cv2.putText(frame, "fps= %.2f"%(fps), (0, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+
+        #     cv2.imshow("video",frame)
+        #     c= cv2.waitKey(1) & 0xff 
+        #     # if video_save_path!="":
+        #     #     out.write(frame)
+
+        #     if c==27:
+        #         camera.release()
+        #         break
+        #     if cv2.waitKey(1) & 0xFF == ord("q"):
+        #         break
+
+        # print("Video Detection Done!")
+        # camera.release()
+        # # if video_save_path!="":
+        # #     print("Save processed video to the path :" + video_save_path)
+        # #     out.release()
+        # cv2.destroyAllWindows()
+
+        # 视频检测
         capture = cv2.VideoCapture(video_path)
         if video_save_path!="":
             fourcc  = cv2.VideoWriter_fourcc(*'XVID')
